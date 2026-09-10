@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            transition: background 0.3s, color 0.3s;
+        }
+        /* When the setting changes, this file turns dark too */
+        body.dark-mode {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        /* The Sliding Switch Track */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc; transition: .4s; border-radius: 34px;
+        }
+        /* The Slider Knob */
+        .slider:before {
+            position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px;
+            background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #2196F3; }
+        input:checked + .slider:before { transform: translateX(24px); }
+    </style>
+</head>
+<body>
+
+    <h3 style="margin: 0; font-size: 16px;">Settings</h3>
+    <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0;">
+    
+    <div class="menu-row">
+        <span>Dark Mode</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-slider">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const themeSlider = document.getElementById('theme-slider');
+    
+    // Safety Guard: Exit early if the slider element doesn't exist yet
+    if (!themeSlider) return;
+
+    // 1. Safe LocalStorage Check
+    try {
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeSlider.checked = true;
+            
+            // Safe Parent Check
+            if (window.parent && window.parent.document && window.parent.document.body) {
+                window.parent.document.body.classList.add('dark-mode');
+            }
+        }
+    } catch (e) {
+        console.warn("Storage or parent access restricted by browser:", e);
+    }
+
+    // 2. Safe Event Listener
+    themeSlider.addEventListener('change', () => {
+        const isDark = themeSlider.checked;
+        
+        // Toggle local body
+        document.body.classList.toggle('dark-mode', isDark);
+        
+        // Safe toggle parent body
+        try {
+            if (window.parent && window.parent.document && window.parent.document.body) {
+                window.parent.document.body.classList.toggle('dark-mode', isDark);
+            }
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch (e) {
+            console.error("Failed to update parent theme:", e);
+        }
+    });
+});
+</script> 
+</body>
+</html>

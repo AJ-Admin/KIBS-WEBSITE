@@ -1,0 +1,1021 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Documents & Resources | KIBS Primary School</title>
+    <link rel="stylesheet" href="{% static 'theme.css' %}">
+     <style>
+        :root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+}
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+     /* ==========================================================================
+   ULTRA-PREMIUM UNIFIED NAV SYSTEM
+   ========================================================================== */
+.master-header {
+    width: 100%;
+    background-color: #f3e522; /* Expensive dark slate hue */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    
+    /* Perfect Scrolling Physics: Locked position on Desktop/Laptop viewports */
+    position: sticky;
+    top: 0;
+    z-index: 9999; /* Higher priority layer to guarantee it glides beautifully over text/images */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+    max-width: 1400px; /* Sweeping professional layout buffer */
+    margin: 0 auto;
+    padding: 18px 40px; /* Generous elite padding framework */
+    display: flex;
+    justify-content: space-between; /* Brand stays far left, navigation stays far right */
+    align-items: center; /* Perfect horizontal alignment line */
+}
+
+/* Branding Engine */
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Flawless spatial tracking between emblem and text */
+}
+
+.header-badge {
+
+    padding: 15px 30px;
+    display: flex;
+    height: 140px; /* Clean, bold branding presentation */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff0000;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Forces text to remain uniform on one elegant line */
+}
+
+/* Nav Anchors & Links Row */
+.nav-links-row {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Balanced tracking distance across 6 menu items */
+}
+
+.nav-anchor {
+    color: #ff0000; /* High-end low-contrast grey to keep view clean */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 10px 4px;
+    position: relative;
+    transition: color 0.35s ease;
+}
+
+/* Premium Interaction: Active Hover */
+.nav-anchor:hover {
+    color: #ff4757; /* Smooth change to focal color accent */
+}
+
+/* The Slider Underline Effect */
+.nav-anchor::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff4757;
+    transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Premium smooth deceleration curve */
+}
+
+.nav-anchor:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKS (The Mobile Exception Rule)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* Unlocks the navbar from scrolling on phone/tablet to respect mobile viewport parameters */
+    .master-header {
+        position: relative; 
+        top: auto;
+        box-shadow: none;
+    }
+    
+    .header-container {
+        flex-direction: column; /* Transitions to structured stack layout if screen is narrow */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .nav-links-row {
+        gap: 18px;
+        flex-wrap: wrap; /* Allows pages to adapt nicely on small tablet interfaces without breaking layout bounds */
+        justify-content: center;
+    }
+    
+    .nav-anchor {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar Layout */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #166d00; /* Dark premium navy blue */
+            color: rgb(255, 255, 255);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffa200; /* Premium Gold color */
+        }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKS (The Mobile Exception Rule)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* Unlocks the navbar from scrolling on phone/tablet to respect mobile viewport parameters */
+    .master-header {
+        position: relative; 
+        top: auto;
+        box-shadow: none;
+    }
+    
+    .header-container {
+        flex-direction: column; /* Transitions to structured stack layout if screen is narrow */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .nav-links-row {
+        gap: 18px;
+        flex-wrap: wrap; /* Allows pages to adapt nicely on small tablet interfaces without breaking layout bounds */
+        justify-content: center;
+    }
+    
+    .nav-anchor {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}
+     /* ==========================================================================
+   DOCUMENT PORTAL PAGE STYLES (Documents Alone)
+   ========================================================================== */
+.hero-content{
+    font-size:larger;
+    font-weight:bold;
+    color:gold
+    ;}
+   .docs-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 320px;
+    background:red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.docs-portal-container {
+    /* The linear gradient: red at the top, transitioning down to purple/black */
+    background: linear-gradient(to bottom, #ff0000, #42026886, #000000);
+    
+    /* Makes the container stretch to take up the remaining vertical space */
+    min-height: calc(100vh - 160px); 
+    
+    /* Ensures content doesn't hug the edges of the dark background */
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.docs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.doc-row {
+    background-color: #161920;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.doc-row:hover {
+    border-color: rgba(255, 71, 87, 0.3);
+    transform: translateX(4px); /* Sleek list slide animation */
+}
+
+.doc-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* File Type Badges */
+.file-badge {
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 12px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.file-badge.pdf {
+    color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.2);
+}
+
+.file-badge.docx {
+    color: #2e86de;
+    background: rgba(46, 134, 222, 0.1);
+    border: 1px solid rgba(46, 134, 222, 0.2);
+}
+
+.doc-details h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.doc-details p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.update-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2ed573;
+    background: rgba(46, 213, 115, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+/* Premium Download Button */
+.download-btn {
+    background-color: #ff4757;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #ee3747;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+}
+
+/* INTERACTIVE SIDEBAR CHECKBOXES */
+.checklist-card {
+    background-color: #161920;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.checklist-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checklist-intro {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.interactive-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+    cursor: pointer;
+    position: relative;
+}
+
+.check-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Modern Rounded Custom Checkbox Engine */
+.custom-box {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.check-item input:checked ~ .custom-box {
+    background-color: #2ed573;
+    border-color: #2ed573;
+}.custom-box::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.check-item input:checked ~ .custom-box::after {
+    display: block;
+}
+
+.check-item input:checked {
+    color: #9ca3af;
+}
+
+/* Notice Banner Block */
+.alert-notice {
+    background: rgba(255, 159, 67, 0.08);
+    border-left: 4px solid #ff9f43;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.alert-notice i {
+    color: #ff9f43;
+    margin-top: 3px;
+}
+
+.alert-notice p {
+    font-size: 0.85rem;
+    color: #e5e7eb;
+    line-height: 1.5;
+}
+
+/* Responsive Dashboard Layout Rules */
+@media (max-width: 950px) {
+    .docs-portal-container {
+        grid-template-columns: 1fr; /* Stacks layout rows cleanly on tablet/mobile screens */
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+}
+/* ==========================================================================
+   ULTRA-PREMIUM UNIFIED FOOTER SYSTEM
+   ========================================================================== */
+.site-footer {
+    background-color: #161920; /* Matching our header for elite top-to-bottom continuity */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 70px 40px 30px 40px; /* Big luxury layout margins */
+    margin-top: 80px; /* Separates page content comfortably from footer */
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr; /* Perfectly tracking asymmetric column columns */
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+.footer-brand h3, .footer-links h4, .footer-socials h4 {
+    color: #ffffff;
+    margin-bottom: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.footer-brand p, .footer-socials p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 14px;
+}
+
+.footer-links ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Subtle micro-slide link hover interaction */
+.footer-links ul li a:hover {
+    color: #ff4757;
+    padding-left: 6px;
+}
+
+/* Icon Row Base Mechanics */
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 46px;
+    height: 46px;
+    background-color: #0f1115; /* Inside button contrast shield */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 🚀 Premium Platform Interactions */
+.social-btn.facebook:hover {
+    background-color: rgba(24, 119, 242, 0.1);
+    color: #1877f2;
+    border-color: #1877f2;
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.25);
+    transform: translateY(-3px);
+}
+
+.social-btn.tiktok:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border-color: #00f2fe;
+    box-shadow: -3px -3px 12px rgba(254, 44, 85, 0.45), 3px 3px 12px rgba(0, 242, 254, 0.45);
+    transform: translateY(-3px);
+}
+
+.social-btn.youtube:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Signature & Copyright Layer Mechanics */
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between; /* Copyright left, creators right */
+    align-items: center;
+}
+
+.footer-bottom p {
+    color: #6b7280;
+    font-size: 0.88rem;
+}
+
+.developer-signature {
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.dev-name {
+    color: #e5e7eb;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover glow effect for your names */
+.dev-name:hover {
+    color: #ff4757;
+    cursor: default;
+}
+
+/* Responsive Footer Matrix Overrides */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack into clean vertical rows */
+        gap: 35px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column; /* Stack copyright and signature on center axis */
+        gap: 12px;
+        text-align: center;
+    }
+}
+</style>
+<style>
+  /* ==========================================
+     1. GLOBAL BASE & SCROLL PREVENTION
+     ========================================== */
+  html, body {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      margin: 0;
+      padding: 0;
+  }
+
+  /* ==========================================
+     2. MOBILE RESPONSIVE OVERRIDES (<768px)
+     ========================================== */
+  @media screen and (max-width: 768px) {
+      
+      /* Force all containers to respect mobile width */
+      * {
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+      }
+
+      /* --- HEADER & LOGO FIXES --- */
+      header, .navbar {
+          width: 100% !important;
+          padding: 10px 15px !important;
+      }
+
+      /* Stops "London College Nansana" title from cutting off */
+      header h1, 
+      header h2, 
+      .logo-container span, 
+      .header-brand {
+          font-size: 1.1rem !important;
+          white-space: normal !important;
+          word-break: break-word !important;
+      }
+
+      /* Stack header menu links cleanly */
+      nav, .nav-links {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          gap: 8px 12px !important;
+          padding: 8px 0 !important;
+      }
+
+      /* --- FOOTER FIXES --- */
+      /* Force footer sections to stack top-to-bottom instead of wide columns */
+      footer, .footer, footer > div {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          width: 100% !important;
+          padding: 15px !important;
+      }
+
+      /* Clean 2-column grid for Quick Links on mobile */
+      .quick-links ul, 
+      footer ul {
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 8px 15px !important;
+          padding: 0 !important;
+          margin: 10px 0 !important;
+          list-style: none !important;
+          width: 100% !important;
+      }
+
+      .quick-links ul li a {
+          font-size: 0.9rem !important;
+          display: block !important;
+      }
+
+      /* Social icons row */
+      .social-links, .social-icons {
+          display: flex !important;
+          gap: 12px !important;
+          margin-top: 10px !important;
+      }
+
+      /* --- THEME SETTINGS & FLOATING GEAR FIX --- */
+      /* Locks the theme/dark mode popup inside the screen above the gear */
+      .theme-settings, 
+      .settings-popup, 
+      .theme-menu, 
+      [class*="theme-setting"], 
+      [id*="theme-setting"] {
+          position: fixed !important;
+          right: 15px !important;
+          bottom: 75px !important; /* Positioned directly above floating gear */
+          left: auto !important;
+          max-width: 220px !important;
+          width: calc(100% - 30px) !important;
+          z-index: 99999 !important;
+          background-color: #222 !important;
+          color: #fff !important;
+          border-radius: 10px !important;
+          padding: 12px 15px !important;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+          box-sizing: border-box !important;
+          text-align: center !important;
+      }
+
+      .theme-settings *, 
+      .settings-popup * {
+          white-space: normal !important;
+          word-break: break-word !important;
+          font-size: 0.85rem !important;
+      }
+
+      /* Anchor the floating gear button to the bottom-right corner */
+      .gear-button, 
+      .settings-btn, 
+      #theme-toggle, 
+      button[class*="gear"], 
+      button[class*="setting"], 
+      [class*="gear"] {
+          position: fixed !important;
+          bottom: 15px !important;
+          right: 15px !important;
+          z-index: 100000 !important;
+          width: 48px !important;
+          height: 48px !important;
+      }
+  }
+</style>
+<!-- Universal Master Header Navigation -->
+<header class="master-header">
+    <div class="header-container">
+        
+        <!-- Left Branding Block: Badge + School Title -->
+        <div class="brand-block">
+           <img src="{% static 'IMAGES/KIBS LOGO.jpeg' %}" alt="KIBS PRIMARY SCHOOL Badge" class="header-badge">
+            <h1 class="header-title">KIBS PRIMARY SCHOOL</h1>
+        </div>
+        <!-- Right Navigation Block: All Operational Pages -->
+<nav class="main-navigation">
+    <ul class="nav-links-row">
+        <li><a href="/" class="nav-anchor">Home</a></li>
+        <li><a href="/academics/" class="nav-anchor">Academics</a></li>
+        <li><a href="/admissions/" class="nav-anchor">Admissions</a></li>
+        <li><a href="/news-and-events/" class="nav-anchor">News & Events</a></li>
+        <li><a href="/documents/" class="nav-anchor">Portal Docs</a></li>
+        <li><a href="/gallery/" class="nav-anchor">Gallery</a></li>
+        <li><a href="/contact/" class="nav-anchor">Contact</a></li>
+        <li><a href="/about/" class="nav-anchor">About us</a></li>
+        <li><a href="/hub/" class="nav-anchor active">Hub</a></li>
+    </ul>
+</nav>
+    </div>
+</header>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="docs-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="kicker">OFFICIAL PORTAL</span>
+            <h1>Document & Resource Center</h1>
+            <p>Access and download official school circulars, fee structures, policies, and registration requirements.</p>
+        </div>
+    </header>
+
+    <main class="docs-portal-container">
+        
+        <section class="docs-list-section">
+            <h2 class="section-title">Available Downloads</h2>
+            
+            <div class="docs-grid">
+                
+                <div class="doc-row">
+                    <div class="doc-meta">
+                        <span class="file-badge pdf">PDF</span>
+                        <div class="doc-details">
+                            <h3>Current School Circular</h3>
+                            <p>Detailed breakdown of tuition, boarding amenities, and functional fees. <span class="update-tag">Updated Term II</span></p>
+                        </div>
+                    </div>
+                    <div class="doc-actions">
+                       <a href="/media/general%20circular%202026.pdf" class="download-btn" download></a><i class="fa-solid fa-cloud-arrow-down"></i> Download</a>
+                    </div>
+                </div>
+
+               
+
+               
+                <div class="doc-row">
+                    <div class="doc-meta">
+                        <span class="file-badge docx">DOCX</span>
+                        <div class="doc-details">
+                            <h3>New Student Admission Entry Form</h3>
+                            <p>Editable registration form required for freshman profiling and house allocations.</p>
+                        </div>
+                    </div>
+                    <div class="doc-actions">
+                        <a href="/media/admission.docx" class="download-btn" download><i class="fa-solid fa-cloud-arrow-down"></i> Download</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <aside class="requirements-sidebar">
+            <div class="checklist-card">
+                <h3><i class="fa-solid fa-clipboard-list"></i> Registration Checklist</h3>
+                <p class="checklist-intro">Parents must present the following documents to the registrar upon arrival:</p>
+                
+                <ul class="interactive-checklist">
+                    <li>
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <span class="custom-box"></span>
+                            Original Birth Certificate (with photocopy)
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <span class="custom-box"></span>
+                            Recommendation Letter from previous school
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <span class="custom-box"></span>
+                            Three (3) recent passport-sized photographs
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <span class="custom-box"></span>
+                            Photocopies of previous Certificates / Awards
+                        </label>
+                    </li>
+                    <li>
+                        <label class="check-item">
+                            <input type="checkbox">
+                            <span class="custom-box"></span>
+                            Fully filled Admission Forms
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="alert-notice">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p><strong>Verification Notice:</strong> Please ensure all original copies are kept handy alongside the photocopies for verification on registration day.</p>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+</body>
+ <!-- Universal Master Footer -->
+<footer class="site-master-footer" style="background-color: #000000; color: white; padding: 50px 0 20px 0; font-family: sans-serif; clear: both; width: 100%;">
+    <style>
+        /* Scoped to make sure your main stylesheet doesn't override these premium properties */
+        footer.site-master-footer .social-container {
+            display: flex !important;
+            gap: 12px !important;
+            margin-top: 15px !important;
+        }
+
+        footer.site-master-footer .social-box {
+            position: relative !important;
+            width: 44px !important;
+            height: 44px !important;
+            background: #000000 !important;
+            border-radius: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+
+        footer.site-master-footer .social-box svg {
+            transition: transform 0.3s ease !important;
+            display: block !important;
+        }
+
+        /* Hover glows matching your live homepage demo */
+        footer.site-master-footer .social-box.fb:hover { 
+            background: #1877F2 !important; 
+            transform: translateY(-4px) !important;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.6) !important;
+        }
+        
+        footer.site-master-footer .social-box.tt:hover { 
+            background: #010101 !important; 
+            transform: translateY(-4px) !important;
+            box-shadow: -3px -3px 10px #00f2fe, 3px 3px 10px #fe0979 !important;
+        }
+        
+        footer.site-master-footer .social-box.yt:hover { 
+            background: #FF0000 !important; 
+            transform: translateY(-4px) !important;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7) !important;
+        }
+
+        footer.site-master-footer .social-box:hover svg {
+            transform: scale(1.1) !important;
+        }
+
+        /* Tooltip configuration */
+        footer.site-master-footer .social-box::after {
+            content: attr(data-tooltip) !important;
+            position: absolute !important;
+            bottom: 55px !important;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(10px) !important;
+            background: #ffffff !important;
+            color: #1a1e21 !important;
+            padding: 6px 10px !important;
+            font-size: 0.75rem !important;
+            white-space: nowrap !important;
+            border-radius: 4px !important;
+            border: 1px solid #1a1e21 !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            transition: opacity 0.3s ease, transform 0.3s ease !important;
+            font-weight: 600 !important;
+            z-index: 9999 !important;
+        }
+
+        footer.site-master-footer .social-box:hover::after {
+            opacity: 1 !important;
+            transform: translateX(-50%) translateY(0) !important;
+        }
+    </style>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; width: 85%; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Column 1: About -->
+        <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 20px;">KIBS Primary School</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #cbd5e1;">Striving for academic excellence, character development, and holistic student growth through digital innovation.</p>
+        </div>
+        
+          <!-- Column 2: Quick Links -->
+        <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Quick Links</h3>
+ <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><a href="/index/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                <li><a href="/academics/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Academics</a></li>
+                <li><a href="/admissions/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Admissions</a></li>
+                <li><a href="/news and events/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">News & Events</a></li>
+                <li><a href="/Documents/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Portal Docs</a></li>
+                <li><a href="/gallery/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Gallery</a></li>
+                <li><a href="/contacts/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                <li><a href="/about/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">About us</a></li>
+                <li><a href="/hub/" style="color: #cbd5e1; text-decoration: none; font-size: 0.9rem;">Work portal</a></li>
+            </ul>
+        </div>
+        
+        <!-- Column 3: Connect With Us -->
+        <div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Connect With Us</h3>
+            <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px;">Follow our official media streams for live campus updates and events:</p>
+            
+            <div class="social-container">
+                <!-- Facebook Box -->
+                <a href="https://www.facebook.com/search/top/?q=London%20College%20Nansana" target="_blank" class="social-box fb" data-tooltip="Watch London College Nansana on Facebook">
+                    <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                
+                <!-- TikTok Box -->
+                <a href="https://www.tiktok.com/@londoncollegenansana" target="_blank" class="social-box tt" data-tooltip="Watch London College Nansana on TikTok">
+                    <svg viewBox="0 0 24 24" fill="white" style="width: 20px; height: 20px;"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.01 1.62 4.14 1.13 1.18 2.69 1.89 4.31 2.01v3.7c-1.92-.05-3.78-.79-5.18-2.11-.1-.09-.17-.2-.29-.34v7.1c0 1.51-.31 3.03-1.01 4.37-1.35 2.44-3.99 3.97-6.78 3.82-2.91-.06-5.64-1.95-6.57-4.71-.97-2.71-.24-5.91 1.85-7.89 1.81-1.66 4.41-2.22 6.74-1.44v3.8c-1.42-.48-3.04-.15-4.13.84-1.12 1.05-1.4 2.76-.66 4.14.71 1.43 2.3 2.31 3.9 2.19 1.63-.04 3.05-1.25 3.32-2.85.06-.33.08-.67.08-1v-15.4z"/></svg>
+                </a>
+                
+                <!-- YouTube Box -->
+                <a href="https://www.youtube.com/results?search_query=London+College+Nansana" target="_blank" class="social-box yt" data-tooltip="Watch London College Nansana on YouTube">
+                    <svg viewBox="0 0 24 24" fill="white" style="width: 22px; height: 22px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.498-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Line Credit Block -->
+    <div style="border-top: 1px solid #5a656a; padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #94a3b8; width: 85%; max-width: 1200px; margin: 0 auto;">
+ <p>&copy; 2026 KIBS Primary School. All Rights Reserved.</p>
+        <p>Designed & Maintained by Kibirango Jerome.</p>
+    </div>
+</footer>
+    
+
+
+    <!-- FLOATING SETTINGS BUTTON & PANEL -->
+<div class="settings-floating-container">
+  <!-- POPUP PANEL -->
+  <div class="settings-popup" id="settings-popup">
+    <h4>Theme Settings</h4>
+    <div class="theme-switch-row">
+      <span>Dark Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- STICKY GEAR BUTTON -->
+  <button id="settings-gear-btn" class="gear-btn" aria-label="Settings">
+    ⚙️
+  </button>
+</div>
+<script src="{% static 'theme.js' %}"></script>
+</body>
+</html>
